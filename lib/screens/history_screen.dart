@@ -34,10 +34,20 @@ class _HistoryScreenState extends State<HistoryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final currencyFormatter = NumberFormat.currency(symbol: SettingsService().currency, decimalDigits: 2);
+    final currencyFormatter = NumberFormat.currency(
+      symbol: SettingsService().currency,
+      decimalDigits: 2,
+    );
 
     return Scaffold(
-      appBar: widget.hideAppBar ? null : AppBar(title: Text(AppLocalizations.of(context)?.predictionHistory ?? 'Prediction History')),
+      appBar: widget.hideAppBar
+          ? null
+          : AppBar(
+              title: Text(
+                AppLocalizations.of(context)?.predictionHistory ??
+                    'Prediction History',
+              ),
+            ),
       body: FutureBuilder<List<Map<String, dynamic>>>(
         future: _historyFuture,
         builder: (context, snapshot) {
@@ -45,7 +55,12 @@ class _HistoryScreenState extends State<HistoryScreen> {
             return const Center(child: CircularProgressIndicator());
           }
           if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return Center(child: Text(AppLocalizations.of(context)?.noHistoryFound ?? 'No history found.'));
+            return Center(
+              child: Text(
+                AppLocalizations.of(context)?.noHistoryFound ??
+                    'No history found.',
+              ),
+            );
           }
 
           final records = snapshot.data!;
@@ -54,12 +69,14 @@ class _HistoryScreenState extends State<HistoryScreen> {
             itemBuilder: (context, index) {
               final record = records[index];
               final date = DateTime.parse(record['timestamp']);
-              final formattedDate = DateFormat('MMM d, yyyy - h:mm a').format(date);
-              
+              final formattedDate = DateFormat(
+                'MMM d, yyyy - h:mm a',
+              ).format(date);
+
               final price = (record['recommended_price'] as num).toDouble();
               final margin = (record['expected_margin'] as num).toDouble();
               final winProb = (record['win_probability'] as num).toDouble();
-              
+
               final isProfitable = margin >= 0.15;
               final iconColor = isProfitable ? Colors.green : Colors.red;
 
@@ -67,11 +84,18 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 child: ListTile(
                   leading: CircleAvatar(
-                    backgroundColor: iconColor.withOpacity(0.2),
-                    child: Icon(isProfitable ? Icons.trending_up : Icons.trending_down, color: iconColor),
+                    backgroundColor: iconColor.withValues(alpha: 0.2),
+                    child: Icon(
+                      isProfitable ? Icons.trending_up : Icons.trending_down,
+                      color: iconColor,
+                    ),
                   ),
-                  title: Text('${AppLocalizations.of(context)?.price ?? "Price"}: ${currencyFormatter.format(price)} (${AppLocalizations.of(context)?.margin ?? "Margin"}: ${(margin * 100).toStringAsFixed(1)}%)'),
-                  subtitle: Text('${AppLocalizations.of(context)?.winProb ?? "Win Prob"}: ${(winProb * 100).toStringAsFixed(1)}% | $formattedDate\n${AppLocalizations.of(context)?.segment ?? "Segment"}: ${record["customer_segment"]} | ${AppLocalizations.of(context)?.weight ?? "Weight"}: ${record["weight"]}kg'),
+                  title: Text(
+                    '${AppLocalizations.of(context)?.price ?? "Price"}: ${currencyFormatter.format(price)} (${AppLocalizations.of(context)?.margin ?? "Margin"}: ${(margin * 100).toStringAsFixed(1)}%)',
+                  ),
+                  subtitle: Text(
+                    '${AppLocalizations.of(context)?.winProb ?? "Win Prob"}: ${(winProb * 100).toStringAsFixed(1)}% | $formattedDate\n${AppLocalizations.of(context)?.segment ?? "Segment"}: ${record["customer_segment"]} | ${AppLocalizations.of(context)?.weight ?? "Weight"}: ${record["weight"]}kg',
+                  ),
                   isThreeLine: true,
                   trailing: IconButton(
                     icon: const Icon(Icons.delete, color: Colors.grey),

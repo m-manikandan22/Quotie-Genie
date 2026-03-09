@@ -180,6 +180,36 @@ abstract class AppLocalizations {
   /// **'Weight (kg)'**
   String get weightKg;
 
+  /// No description provided for @distanceKm.
+  ///
+  /// In en, this message translates to:
+  /// **'Distance (km)'**
+  String get distanceKm;
+
+  /// No description provided for @vehicleType.
+  ///
+  /// In en, this message translates to:
+  /// **'Vehicle Type'**
+  String get vehicleType;
+
+  /// No description provided for @category.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get category;
+
+  /// No description provided for @deliveryTimeHrs.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Time (hrs)'**
+  String get deliveryTimeHrs;
+
+  /// No description provided for @weatherCondition.
+  ///
+  /// In en, this message translates to:
+  /// **'Weather'**
+  String get weatherCondition;
+
   /// No description provided for @requiredField.
   ///
   /// In en, this message translates to:
@@ -275,6 +305,168 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Expected Margin'**
   String get expectedMargin;
+
+  /// No description provided for @confidenceBand.
+  ///
+  /// In en, this message translates to:
+  /// **'Confidence Band'**
+  String get confidenceBand;
+
+  /// No description provided for @lowPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Low'**
+  String get lowPrice;
+
+  /// No description provided for @optimalPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Optimal'**
+  String get optimalPrice;
+
+  /// No description provided for @highPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'High'**
+  String get highPrice;
+
+  /// No description provided for @initialQuote.
+  ///
+  /// In en, this message translates to:
+  /// **'Initial Quote'**
+  String get initialQuote;
+
+  /// No description provided for @reframedQuote.
+  ///
+  /// In en, this message translates to:
+  /// **'Reframed Quote'**
+  String get reframedQuote;
+
+  /// No description provided for @optimizedQuote.
+  ///
+  /// In en, this message translates to:
+  /// **'Optimized Quote'**
+  String get optimizedQuote;
+
+  /// No description provided for @quoteNotCompetitive.
+  ///
+  /// In en, this message translates to:
+  /// **'Quote May Not Be Competitive'**
+  String get quoteNotCompetitive;
+
+  /// No description provided for @reframeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Win probability is below 60% or margin is below 10%. Tap Reframe to let the optimizer find a better price.'**
+  String get reframeDescription;
+
+  /// No description provided for @reframeQuote.
+  ///
+  /// In en, this message translates to:
+  /// **'Reframe Quote'**
+  String get reframeQuote;
+
+  /// No description provided for @optimizing.
+  ///
+  /// In en, this message translates to:
+  /// **'Optimizing...'**
+  String get optimizing;
+
+  /// No description provided for @optimizationSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Optimization Summary'**
+  String get optimizationSummary;
+
+  /// No description provided for @before.
+  ///
+  /// In en, this message translates to:
+  /// **'Before'**
+  String get before;
+
+  /// No description provided for @after.
+  ///
+  /// In en, this message translates to:
+  /// **'After'**
+  String get after;
+
+  /// No description provided for @optimizerSteps.
+  ///
+  /// In en, this message translates to:
+  /// **'Optimizer completed in {steps} step(s)'**
+  String optimizerSteps(int steps);
+
+  /// No description provided for @vehicleBike.
+  ///
+  /// In en, this message translates to:
+  /// **'Bike'**
+  String get vehicleBike;
+
+  /// No description provided for @vehicleCar.
+  ///
+  /// In en, this message translates to:
+  /// **'Car'**
+  String get vehicleCar;
+
+  /// No description provided for @vehicleVan.
+  ///
+  /// In en, this message translates to:
+  /// **'Van'**
+  String get vehicleVan;
+
+  /// No description provided for @vehicleTruck.
+  ///
+  /// In en, this message translates to:
+  /// **'Truck'**
+  String get vehicleTruck;
+
+  /// No description provided for @catGeneral.
+  ///
+  /// In en, this message translates to:
+  /// **'General'**
+  String get catGeneral;
+
+  /// No description provided for @catElectronics.
+  ///
+  /// In en, this message translates to:
+  /// **'Electronics'**
+  String get catElectronics;
+
+  /// No description provided for @catFragile.
+  ///
+  /// In en, this message translates to:
+  /// **'Fragile'**
+  String get catFragile;
+
+  /// No description provided for @catPerishable.
+  ///
+  /// In en, this message translates to:
+  /// **'Perishable'**
+  String get catPerishable;
+
+  /// No description provided for @weatherClear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get weatherClear;
+
+  /// No description provided for @weatherRainy.
+  ///
+  /// In en, this message translates to:
+  /// **'Rainy'**
+  String get weatherRainy;
+
+  /// No description provided for @weatherFoggy.
+  ///
+  /// In en, this message translates to:
+  /// **'Foggy'**
+  String get weatherFoggy;
+
+  /// No description provided for @aroundOptimal.
+  ///
+  /// In en, this message translates to:
+  /// **'±10% around optimal price'**
+  String get aroundOptimal;
 
   /// No description provided for @noHistoryFound.
   ///

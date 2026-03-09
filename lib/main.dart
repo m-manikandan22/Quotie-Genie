@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'l10n/app_localizations.dart';
 import 'services/settings_service.dart';
+import 'services/ml_inference_service.dart';
 import 'screens/main_navigation.dart';
 
 void main() async {
@@ -13,6 +14,10 @@ void main() async {
     databaseFactory = databaseFactoryFfi;
   }
   await SettingsService().init();
+
+  // Load TFLite models — safe: falls back to formula engine if files absent.
+  await MLInferenceService().loadModels();
+
   runApp(const MyApp());
 }
 
@@ -28,7 +33,7 @@ class MyApp extends StatelessWidget {
           title: 'Quotie-Genie',
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(
-              seedColor: const Color(0xFF0052CC), 
+              seedColor: const Color(0xFF0052CC),
               brightness: Brightness.light,
             ),
             useMaterial3: true,

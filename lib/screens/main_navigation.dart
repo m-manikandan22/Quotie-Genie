@@ -35,12 +35,18 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           NavigationDestination(
             icon: const Icon(Icons.analytics_outlined),
             selectedIcon: const Icon(Icons.analytics),
-            label: AppLocalizations.of(context)?.predictPricing.split(' ').first ?? 'Predict',
+            label:
+                AppLocalizations.of(context)?.predictPricing.split(' ').first ??
+                'Predict',
           ),
           NavigationDestination(
             icon: const Icon(Icons.history_outlined),
             selectedIcon: const Icon(Icons.history),
-            label: AppLocalizations.of(context)?.predictionHistory.split(' ').last ?? 'History',
+            label:
+                AppLocalizations.of(
+                  context,
+                )?.predictionHistory.split(' ').last ??
+                'History',
           ),
           NavigationDestination(
             icon: const Icon(Icons.settings_outlined),
@@ -51,7 +57,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       ),
     );
   }
-
 }
 
 class SettingsScreen extends StatefulWidget {
@@ -66,9 +71,25 @@ class _SettingsScreenState extends State<SettingsScreen> {
   late String _curr;
   late String _reg;
 
-  final languages = ['English', 'Spanish', 'French', 'German', 'Hindi', 'Chinese', 'Japanese'];
+  final languages = [
+    'English',
+    'Spanish',
+    'French',
+    'German',
+    'Hindi',
+    'Chinese',
+    'Japanese',
+  ];
   final currencies = ['\$', '€', '£', '¥', '₹', 'A\$', 'C\$'];
-  final regions = ['United States', 'Europe', 'UK', 'Japan', 'India', 'Australia', 'Canada'];
+  final regions = [
+    'United States',
+    'Europe',
+    'UK',
+    'Japan',
+    'India',
+    'Australia',
+    'Canada',
+  ];
 
   @override
   void initState() {
@@ -83,46 +104,81 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        left: 24, right: 24, top: 24,
+        left: 24,
+        right: 24,
+        top: 24,
         bottom: MediaQuery.of(context).viewInsets.bottom + 24,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(AppLocalizations.of(context)?.preferences ?? 'Preferences', style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold)),
+          Text(
+            AppLocalizations.of(context)?.preferences ?? 'Preferences',
+            style: Theme.of(
+              context,
+            ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
+          ),
           const SizedBox(height: 24),
           DropdownButtonFormField<String>(
-            value: languages.contains(_lang) ? _lang : 'English',
-            decoration: InputDecoration(labelText: AppLocalizations.of(context)?.language ?? 'Language', border: const OutlineInputBorder()),
-            items: languages.map((l) => DropdownMenuItem(value: l, child: Text(l))).toList(),
+            initialValue: languages.contains(_lang) ? _lang : 'English',
+            decoration: InputDecoration(
+              labelText: AppLocalizations.of(context)?.language ?? 'Language',
+              border: const OutlineInputBorder(),
+            ),
+            items: languages
+                .map((l) => DropdownMenuItem(value: l, child: Text(l)))
+                .toList(),
             onChanged: (v) => setState(() => _lang = v!),
           ),
           const SizedBox(height: 16),
           DropdownButtonFormField<String>(
-            value: currencies.contains(_curr) ? _curr : '\$',
-            decoration: InputDecoration(labelText: AppLocalizations.of(context)?.currency ?? 'Currency', border: const OutlineInputBorder()),
-            items: currencies.map((c) => DropdownMenuItem(value: c, child: Text(c))).toList(),
+            initialValue: currencies.contains(_curr) ? _curr : '\$',
+            decoration: InputDecoration(
+              labelText: AppLocalizations.of(context)?.currency ?? 'Currency',
+              border: const OutlineInputBorder(),
+            ),
+            items: currencies
+                .map((c) => DropdownMenuItem(value: c, child: Text(c)))
+                .toList(),
             onChanged: (v) => setState(() => _curr = v!),
           ),
           const SizedBox(height: 16),
           DropdownButtonFormField<String>(
-            value: regions.contains(_reg) ? _reg : 'United States',
-            decoration: InputDecoration(labelText: AppLocalizations.of(context)?.region ?? 'Region', border: const OutlineInputBorder()),
-            items: regions.map((r) => DropdownMenuItem(value: r, child: Text(r))).toList(),
+            initialValue: regions.contains(_reg) ? _reg : 'United States',
+            decoration: InputDecoration(
+              labelText: AppLocalizations.of(context)?.region ?? 'Region',
+              border: const OutlineInputBorder(),
+            ),
+            items: regions
+                .map((r) => DropdownMenuItem(value: r, child: Text(r)))
+                .toList(),
             onChanged: (v) => setState(() => _reg = v!),
           ),
           const SizedBox(height: 24),
           FilledButton(
             onPressed: () {
-              SettingsService().updateSettings(language: _lang, currency: _curr, region: _reg);
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(AppLocalizations.of(context)?.savePreferences ?? 'Saved', style: const TextStyle(color: Colors.white))));
+              SettingsService().updateSettings(
+                language: _lang,
+                currency: _curr,
+                region: _reg,
+              );
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    AppLocalizations.of(context)?.savePreferences ?? 'Saved',
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                ),
+              );
             },
-            child: Text(AppLocalizations.of(context)?.savePreferences ?? 'Save Preferences'),
+            child: Text(
+              AppLocalizations.of(context)?.savePreferences ??
+                  'Save Preferences',
+            ),
           ),
         ],
       ),
     );
   }
 }
-

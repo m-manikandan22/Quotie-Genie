@@ -45,6 +45,21 @@ class AppLocalizationsEs extends AppLocalizations {
   String get weightKg => 'Peso (kg)';
 
   @override
+  String get distanceKm => 'Distancia (km)';
+
+  @override
+  String get vehicleType => 'Tipo de vehículo';
+
+  @override
+  String get category => 'Categoría';
+
+  @override
+  String get deliveryTimeHrs => 'Tiempo de entrega (hrs)';
+
+  @override
+  String get weatherCondition => 'Condición meteorológica';
+
+  @override
   String get requiredField => 'Requerido';
 
   @override
@@ -91,6 +106,90 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get expectedMargin => 'Margen esperado';
+
+  @override
+  String get confidenceBand => 'Banda de confianza';
+
+  @override
+  String get lowPrice => 'Bajo';
+
+  @override
+  String get optimalPrice => 'Óptimo';
+
+  @override
+  String get highPrice => 'Alto';
+
+  @override
+  String get initialQuote => 'Initial Quote';
+
+  @override
+  String get reframedQuote => 'Reframed Quote';
+
+  @override
+  String get optimizedQuote => 'Optimized Quote';
+
+  @override
+  String get quoteNotCompetitive => 'Quote May Not Be Competitive';
+
+  @override
+  String get reframeDescription =>
+      'Win probability is below 60% or margin is below 10%. Tap Reframe to let the optimizer find a better price.';
+
+  @override
+  String get reframeQuote => 'Reframe Quote';
+
+  @override
+  String get optimizing => 'Optimizing...';
+
+  @override
+  String get optimizationSummary => 'Optimization Summary';
+
+  @override
+  String get before => 'Before';
+
+  @override
+  String get after => 'After';
+
+  @override
+  String optimizerSteps(int steps) {
+    return 'Optimizer completed in $steps step(s)';
+  }
+
+  @override
+  String get vehicleBike => 'Bike';
+
+  @override
+  String get vehicleCar => 'Car';
+
+  @override
+  String get vehicleVan => 'Van';
+
+  @override
+  String get vehicleTruck => 'Truck';
+
+  @override
+  String get catGeneral => 'General';
+
+  @override
+  String get catElectronics => 'Electronics';
+
+  @override
+  String get catFragile => 'Fragile';
+
+  @override
+  String get catPerishable => 'Perishable';
+
+  @override
+  String get weatherClear => 'Clear';
+
+  @override
+  String get weatherRainy => 'Rainy';
+
+  @override
+  String get weatherFoggy => 'Foggy';
+
+  @override
+  String get aroundOptimal => '±10% around optimal price';
 
   @override
   String get noHistoryFound => 'No se encontró historial.';

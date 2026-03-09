@@ -1,12 +1,12 @@
 ![Quotie-Genie Hero Banner](assets/images/hero.png)
 
-# 🧞‍♂️ Quotie-Genie
+# 🧞‍♂️ Quotie Genie
 
 <p align="center">
-  <img src="assets/images/logo.png" width="150" alt="Quotie-Genie Logo">
+  <img src="assets/images/icon.png" width="150" alt="Quotie Genie Logo">
 </p>
 
-**Quotie-Genie** is a fully offline, cross-platform logistics machine learning application built entirely in **Flutter** (for both UI and native calculation logic). It empowers logistics and supply chain professionals to make data-driven decisions regarding quotation pricing.
+**Quotie Genie** is a fully offline, cross-platform logistics machine learning application built entirely in **Flutter** (for both UI and native calculation logic). It empowers logistics and supply chain professionals to make data-driven decisions regarding quotation pricing.
 
 ## 🚀 Key Features
 
@@ -17,7 +17,7 @@
 
 ## 🛠️ Architecture
 
-Quotie-Genie uses a unified architecture built fully in Flutter, ensuring high performance on Android, iOS, and Desktop without needing external interpreters.
+Quotie Genie uses a unified architecture built fully in Flutter, ensuring high performance on Android, iOS, and Desktop without needing external interpreters.
 
 *   **Frontend & Logic Engine**: Flutter (Cross-Platform) & Dart
 *   **Data Persistence**: SQLite (via `sqflite_common_ffi` for desktop support)
@@ -42,7 +42,11 @@ Quotie-Genie uses a unified architecture built fully in Flutter, ensuring high p
    ```bash
    flutter pub get
    ```
-4. Run the application (Mobile or Desktop):
+4. Generate app icons (if you modify `assets/images/icon.png`):
+   ```bash
+   dart run flutter_launcher_icons
+   ```
+5. Run the application (Mobile or Desktop):
    ```bash
    flutter run
    ```
@@ -51,13 +55,8 @@ Quotie-Genie uses a unified architecture built fully in Flutter, ensuring high p
 
 To generate standalone executables or installation packages for each platform, you can use the following Flutter build commands depending on your target OS:
 
-### Windows (EXE)
-```bash
-flutter build windows
-```
-*Outputs to: `build/windows/x64/runner/Release/quote_genie.exe`*
-
-### Android (APK)
+### Android (Release APK)
+*This is the recommended workflow to generate a standalone App with the customized icon.*
 ```bash
 flutter build apk
 ```
