@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Portal | Reach Out & Search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="noise-overlay"></div>
+
+    <nav class="navbar">
+        <div class="logo">Quotie Genie</div>
+        <div class="nav-links">
+            <a href="#search-section">Search</a>
+            <a href="#ask-section">Ask Us</a>
+            <a href="#faq">FAQ</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content fade-in-up">
+            <h1>How can we help you today?</h1>
+            <p class="delay-1">Search our knowledge base or reach out directly for your logistics and shipping needs.
+            </p>
+        </div>
+        <div class="hero-image slide-in-right delay-2">
+            <div class="carousel">
+                <img src="images/hero.png" alt="Logistics Excellence" class="carousel-img active">
+
+                <div class="carousel-indicators">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+    </header>
+
+    <main>
+        <section id="search-section" class="search-container fade-in-up delay-2">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search for answers, topics, or guides..."
+                    autocomplete="off">
+                <button type="button" id="searchBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+            <div id="searchResults" class="search-results">
+                <!-- JS will populate this -->
+            </div>
+        </section>
+
+        <section id="ask-section" class="ask-container fade-in-up delay-3">
+            <div class="ask-content">
+                <h2>Still have questions?</h2>
+                <p>If you couldn't find what you're looking for, send us a message and our team will get back to you.
+                </p>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Question</label>
+                        <textarea id="message" rows="5" required placeholder="How do I..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loader loader-hidden"></span>
+                    </button>
+                    <div id="formFeedback" class="form-feedback hidden">Message sent successfully! We'll be in touch.
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-container fade-in-up delay-4">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">What are your support hours? <span class="icon">+</span></div>
+                    <div class="faq-answer">
+                        <p>Our support team is available 24/7. We aim to respond to all inquiries within 2 hours.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I reset my password? <span class="icon">+</span></div>
+                    <div class="faq-answer">
+                        <p>You can reset your password by clicking on the 'Forgot Password' link on the login page.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Where can I find the API documentation? <span class="icon">+</span></div>
+                    <div class="faq-answer">
+                        <p>The API documentation is available in your user dashboard under the 'Developer' tab.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">Quotie Genie</div>
+            <p>&copy; 2026 Quotie Genie. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
